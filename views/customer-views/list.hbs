@@ -1,0 +1,13 @@
+<h2>Customers</h2>
+<br>
+<button><a href="/customer/create">New Customer</a></button>
+<br>
+<hr>
+<br>
+<div class="list--container">
+    {{#each customers}}
+        <div class="list--container-box">
+            <a href="/customer/details/{{this._id}}">{{this.firstname}}</a>
+        </div>
+    {{/each}}
+</div>

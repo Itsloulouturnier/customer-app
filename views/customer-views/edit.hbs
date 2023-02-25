@@ -1,0 +1,26 @@
+<h2>New Customer</h2>
+<br>
+<br>
+
+<form action="/customer/edit/{{customer._id}}" method="post">
+    <label for="firstNameInput">First Name: <input id="firstNameInput" type="text" name="firstName" value="{{customer.firstname}}">
+        </label>
+    <label for="lastNameInput">Last Name: <input id="lastNameInput" type="text" name="lastName" value="{{customer.lastname}}"> 
+        </label>
+    <label for="balanceInput">Customer Balance: <input id="balanceInput" type="number" name="balance" value="{{customer.balance}}">
+        </label>
+    <label for="loyaltyPointsInput">Loyalty Points: <input id="loyaltyPointsInput" type="number" name="loyaltyPoints" value="{{customer.loyaltypoints}}">
+        </label>
+    <label for="whatsappNumberInput">Whatsapp Number: <input id="whatsappNumberInput" type="tel" name="whatsappNumber" value="{{customer.whatsappnumber}}">
+        </label>
+    <label for="locationInput">Location: 
+        {{!-- <input id="locationInput" type="text" name="location"> --}}
+        <select name="location" id="locationInput">
+                        {{#each locations}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+        </label>
+    <button type="submit">Update Customer</button>
+</form>
+
